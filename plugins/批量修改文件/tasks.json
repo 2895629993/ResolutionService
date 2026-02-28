@@ -1,0 +1,64 @@
+{
+    "edits": [
+        {
+            "file": "你的文件地址",
+            "mode": "regex",
+            "pattern": "True",
+            "replacement": "False",
+            "regex_flags": "",
+            "regex_count": 0,
+            "line_range": [
+                6,
+                7
+            ]
+        },
+        {
+            "file": "你的文件地址",
+            "mode": "regex",
+            "pattern": "(ResolutionSizeX=).*",
+            "replacement": "ResolutionSizeX={{enabled_width}}",
+            "regex_flags": "",
+            "regex_count": 0,
+            "line_range": [
+                10,
+                13
+            ]
+        },
+        {
+            "file": "你的文件地址",
+            "mode": "regex",
+            "pattern": "(ResolutionSizeY=).*",
+            "replacement": "ResolutionSizeY={{enabled_height}}",
+            "regex_flags": "",
+            "regex_count": 0,
+            "line_range": [
+                10,
+                13
+            ]
+        },
+        {
+            "file": "你的文件地址",
+            "mode": "regex",
+            "pattern": "(screenMode=).*",
+            "replacement": "screenMode=2",
+            "regex_flags": "",
+            "regex_count": 0,
+            "line_range": [
+                16,
+                17
+            ]
+        },
+        {
+            "file": "你的文件地址",
+            "mode": "regex",
+            "pattern": "^$",
+            "replacement": "FullscreenMode=2\\n",
+            "regex_flags": "",
+            "regex_count": 0,
+            "line_range": [
+                32,
+                32
+            ]
+        }
+    ]
+}

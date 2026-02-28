@@ -1,0 +1,24 @@
+2026-02-28 19:24:44 [INFO] config_manager - 配置加载成功: AppConfig(launcher_process='空', game_process='空', default_resolution=Resolution(width=1920, height=1080, refresh_rate=240), enabled_resolution=Resolution(width=1920, height=1080, refresh_rate=240), web_enabled=True, web_host='127.0.0.1', web_port=8765, auto_capture_default_on_start=True, enable_plugins=True)
+2026-02-28 19:24:44 [INFO] main - 配置加载完成:
+2026-02-28 19:24:44 [INFO] main -   启动器进程: 空
+2026-02-28 19:24:44 [INFO] main -   游戏进程:   空
+2026-02-28 19:24:44 [INFO] main -   默认分辨率: 1920x1080 @240Hz
+2026-02-28 19:24:44 [INFO] main -   启用分辨率: 1920x1080 @240Hz
+2026-02-28 19:24:44 [ERROR] main - 导入插件失败: E:\Project\GameResolutionService\plugins\批量修改文件 ([('E:\\Project\\GameResolutionService\\plugins\\批量修改文件\\plugin.py', 'E:\\Project\\GameResolutionService\\本体\\plugins\\批量修改文件\\plugin.py', '[WinError 32] 另一个程序正在使用此文件，进程无法访问。'), ('E:\\Project\\GameResolutionService\\plugins\\批量修改文件\\plugin_config.json', 'E:\\Project\\GameResolutionService\\本体\\plugins\\批量修改文件\\plugin_config.json', '[WinError 32] 另一个程序正在使用此文件，进程无法访问。'), ('E:\\Project\\GameResolutionService\\plugins\\批量修改文件\\README.md', 'E:\\Project\\GameResolutionService\\本体\\plugins\\批量修改文件\\README.md', '[WinError 32] 另一个程序正在使用此文件，进程无法访问。'), ('E:\\Project\\GameResolutionService\\plugins\\批量修改文件\\tasks.json', 'E:\\Project\\GameResolutionService\\本体\\plugins\\批量修改文件\\tasks.json', '[WinError 32] 另一个程序正在使用此文件，进程无法访问。'), ('E:\\Project\\GameResolutionService\\plugins\\批量修改文件\\__pycache__\\plugin.cpython-314.pyc', 'E:\\Project\\GameResolutionService\\本体\\plugins\\批量修改文件\\__pycache__\\plugin.cpython-314.pyc', '[WinError 32] 另一个程序正在使用此文件，进程无法访问。')])
+Traceback (most recent call last):
+  File "E:\Project\GameResolutionService\本体\main.py", line 134, in _sync_external_plugins
+    shutil.copytree(source_dir, target_dir, dirs_exist_ok=True)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\shutil.py", line 654, in copytree
+    return _copytree(entries=entries, src=src, dst=dst, symlinks=symlinks,
+                     ignore=ignore, copy_function=copy_function,
+                     ignore_dangling_symlinks=ignore_dangling_symlinks,
+                     dirs_exist_ok=dirs_exist_ok)
+  File "C:\Python314\Lib\shutil.py", line 608, in _copytree
+    raise Error(errors)
+shutil.Error: [('E:\\Project\\GameResolutionService\\plugins\\批量修改文件\\plugin.py', 'E:\\Project\\GameResolutionService\\本体\\plugins\\批量修改文件\\plugin.py', '[WinError 32] 另一个程序正在使用此文件，进程无法访问。'), ('E:\\Project\\GameResolutionService\\plugins\\批量修改文件\\plugin_config.json', 'E:\\Project\\GameResolutionService\\本体\\plugins\\批量修改文件\\plugin_config.json', '[WinError 32] 另一个程序正在使用此文件，进程无法访问。'), ('E:\\Project\\GameResolutionService\\plugins\\批量修改文件\\README.md', 'E:\\Project\\GameResolutionService\\本体\\plugins\\批量修改文件\\README.md', '[WinError 32] 另一个程序正在使用此文件，进程无法访问。'), ('E:\\Project\\GameResolutionService\\plugins\\批量修改文件\\tasks.json', 'E:\\Project\\GameResolutionService\\本体\\plugins\\批量修改文件\\tasks.json', '[WinError 32] 另一个程序正在使用此文件，进程无法访问。'), ('E:\\Project\\GameResolutionService\\plugins\\批量修改文件\\__pycache__\\plugin.cpython-314.pyc', 'E:\\Project\\GameResolutionService\\本体\\plugins\\批量修改文件\\__pycache__\\plugin.cpython-314.pyc', '[WinError 32] 另一个程序正在使用此文件，进程无法访问。')]
+2026-02-28 19:24:44 [INFO] plugin_manager - 插件加载成功: 批量修改文件 (E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py)
+2026-02-28 19:24:44 [INFO] web_config_server - 网页配置服务启动: http://127.0.0.1:8765
+2026-02-28 19:24:44 [INFO] main - 已进入配置界面模式，按 Ctrl+C 退出
+2026-02-28 19:24:45 [INFO] main - 已尝试打开浏览器: http://127.0.0.1:8765
+2026-02-28 19:24:45 [INFO] web_config_server - [web] 127.0.0.1 - "GET / HTTP/1.1" 200 -

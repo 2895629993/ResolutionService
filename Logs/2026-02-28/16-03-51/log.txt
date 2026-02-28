@@ -1,0 +1,12 @@
+2026-02-28 16:03:51 [INFO] config_manager - 配置加载成功: AppConfig(launcher_process='WmgpMobileGame.exe', game_process='QRSLkk.exe', default_resolution=Resolution(width=1920, height=1080, refresh_rate=240), enabled_resolution=Resolution(width=1920, height=1080, refresh_rate=240), web_enabled=True, web_host='127.0.0.1', web_port=8765, auto_capture_default_on_start=True, enable_plugins=True)
+2026-02-28 16:03:51 [INFO] main - 配置加载完成:
+2026-02-28 16:03:51 [INFO] main -   启动器进程: WmgpMobileGame.exe
+2026-02-28 16:03:51 [INFO] main -   游戏进程:   QRSLkk.exe
+2026-02-28 16:03:51 [INFO] main -   默认分辨率: 1920x1080 @240Hz
+2026-02-28 16:03:51 [INFO] main -   启用分辨率: 1920x1080 @240Hz
+2026-02-28 16:03:51 [INFO] main - 已导入插件目录: E:\Project\GameResolutionService\plugins\批量修改文件 -> E:\Project\GameResolutionService\本体\plugins\批量修改文件
+2026-02-28 16:03:51 [INFO] plugin_manager - 插件加载成功: 批量修改文件 (E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py)
+2026-02-28 16:03:51 [INFO] web_config_server - 网页配置服务启动: http://127.0.0.1:8765
+2026-02-28 16:03:51 [INFO] main - 已进入配置界面模式，按 Ctrl+C 退出
+2026-02-28 16:03:52 [INFO] main - 已尝试打开浏览器: http://127.0.0.1:8765
+2026-02-28 16:03:52 [INFO] web_config_server - [web] 127.0.0.1 - "GET / HTTP/1.1" 200 -

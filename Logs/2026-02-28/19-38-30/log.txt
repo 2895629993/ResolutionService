@@ -1,0 +1,306 @@
+2026-02-28 19:38:30 [INFO] config_manager - 配置加载成功: AppConfig(launcher_process='空', game_process='空', default_resolution=Resolution(width=1920, height=1080, refresh_rate=240), enabled_resolution=Resolution(width=1920, height=1080, refresh_rate=240), web_enabled=True, web_host='127.0.0.1', web_port=8765, auto_capture_default_on_start=True, enable_plugins=True)
+2026-02-28 19:38:30 [INFO] main - 配置加载完成:
+2026-02-28 19:38:30 [INFO] main -   启动器进程: 空
+2026-02-28 19:38:30 [INFO] main -   游戏进程:   空
+2026-02-28 19:38:30 [INFO] main -   默认分辨率: 1920x1080 @240Hz
+2026-02-28 19:38:30 [INFO] main -   启用分辨率: 1920x1080 @240Hz
+2026-02-28 19:38:30 [INFO] plugin_manager - 插件加载成功: 批量修改文件 (E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py)
+2026-02-28 19:38:30 [INFO] web_config_server - 网页配置服务启动: http://127.0.0.1:8765
+2026-02-28 19:38:30 [INFO] main - 已进入配置界面模式，按 Ctrl+C 退出
+2026-02-28 19:38:31 [INFO] main - 已尝试打开浏览器: http://127.0.0.1:8765
+2026-02-28 19:38:31 [INFO] web_config_server - [web] 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-02-28 19:40:17 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 200 -
+2026-02-28 19:40:28 [INFO] plugin_______ - [批量修改文件] 开始执行批量修改，任务数: 1，dry_run=False，stop_on_error=False，backup_before_write=False
+2026-02-28 19:40:28 [INFO] plugin_______ - [批量修改文件] 任务 #1 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:40:28 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 200 -
+2026-02-28 19:42:53 [ERROR] web_config_server - 网页提交处理失败: 不支持的 regex_flags 标记: 0
+Traceback (most recent call last):
+  File "E:\Project\GameResolutionService\本体\web_config_server.py", line 260, in do_POST
+    message = self._dispatch_plugin_action(form)
+  File "E:\Project\GameResolutionService\本体\web_config_server.py", line 241, in _dispatch_plugin_action
+    return plugin_manager.dispatch_web_action(plugin_id, action, form, self.app_state)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Project\GameResolutionService\本体\plugin_manager.py", line 201, in dispatch_web_action
+    result = handle_fn(action, form, context)
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 1109, in handle_web_action
+    task_count, flat_edits = _parse_visual_tasks_payload(raw_text)
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 588, in _parse_visual_tasks_payload
+    parsed_flags = _parse_regex_flags(regex_flags)
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 149, in _parse_regex_flags
+    raise ValueError(f"不支持的 regex_flags 标记: {char}")
+ValueError: 不支持的 regex_flags 标记: 0
+2026-02-28 19:42:53 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 400 -
+2026-02-28 19:42:57 [INFO] plugin_______ - [批量修改文件] 开始执行批量修改，任务数: 1，dry_run=False，stop_on_error=False，backup_before_write=False
+2026-02-28 19:42:57 [INFO] plugin_______ - [批量修改文件] 任务 #1 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:42:57 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 200 -
+2026-02-28 19:43:47 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 200 -
+2026-02-28 19:43:53 [INFO] plugin_______ - [批量修改文件] 开始执行批量修改，任务数: 1，dry_run=False，stop_on_error=False，backup_before_write=False
+2026-02-28 19:43:53 [ERROR] plugin_______ - [批量修改文件] 任务 #1 失败: 正则未匹配到任何内容: /(bShouldLetterbox|bLastConfirmedShouldLetterbox)=True/
+Traceback (most recent call last):
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 679, in _execute_rules
+    changed = _apply_rule(
+        base_dir,
+    ...<2 lines>...
+        backup_before_write=settings.backup_before_write,
+    )
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 325, in _apply_rule
+    replaced_segment = _replace_regex(segment, rule)
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 304, in _replace_regex
+    raise ValueError(f"正则未匹配到任何内容: /{rule.pattern}/")
+ValueError: 正则未匹配到任何内容: /(bShouldLetterbox|bLastConfirmedShouldLetterbox)=True/
+2026-02-28 19:43:53 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 200 -
+2026-02-28 19:44:09 [INFO] plugin_______ - [批量修改文件] 开始执行批量修改，任务数: 1，dry_run=False，stop_on_error=False，backup_before_write=False
+2026-02-28 19:44:09 [INFO] plugin_______ - [批量修改文件] 任务 #1 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:44:09 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 200 -
+2026-02-28 19:44:42 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 200 -
+2026-02-28 19:44:56 [INFO] plugin_______ - [批量修改文件] 开始执行批量修改，任务数: 1，dry_run=False，stop_on_error=False，backup_before_write=False
+2026-02-28 19:44:56 [INFO] plugin_______ - [批量修改文件] 任务 #1 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:44:56 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 200 -
+2026-02-28 19:45:06 [INFO] plugin_______ - [批量修改文件] 开始执行批量修改，任务数: 1，dry_run=False，stop_on_error=False，backup_before_write=False
+2026-02-28 19:45:06 [INFO] plugin_______ - [批量修改文件] 任务 #1 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:45:06 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 200 -
+2026-02-28 19:48:14 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 200 -
+2026-02-28 19:48:17 [INFO] plugin_______ - [批量修改文件] 开始执行批量修改，任务数: 3，dry_run=False，stop_on_error=False，backup_before_write=False
+2026-02-28 19:48:17 [ERROR] plugin_______ - [批量修改文件] 任务 #1 失败: 正则未匹配到任何内容: /True/
+Traceback (most recent call last):
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 679, in _execute_rules
+    changed = _apply_rule(
+        base_dir,
+    ...<2 lines>...
+        backup_before_write=settings.backup_before_write,
+    )
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 325, in _apply_rule
+    replaced_segment = _replace_regex(segment, rule)
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 304, in _replace_regex
+    raise ValueError(f"正则未匹配到任何内容: /{rule.pattern}/")
+ValueError: 正则未匹配到任何内容: /True/
+2026-02-28 19:48:17 [INFO] plugin_______ - [批量修改文件] 任务 #2 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:48:17 [INFO] plugin_______ - [批量修改文件] 任务 #3 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:48:17 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 200 -
+2026-02-28 19:49:03 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 200 -
+2026-02-28 19:49:17 [INFO] plugin_______ - [批量修改文件] 开始执行批量修改，任务数: 3，dry_run=False，stop_on_error=False，backup_before_write=False
+2026-02-28 19:49:17 [ERROR] plugin_______ - [批量修改文件] 任务 #1 失败: 正则未匹配到任何内容: /True/
+Traceback (most recent call last):
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 679, in _execute_rules
+    changed = _apply_rule(
+        base_dir,
+    ...<2 lines>...
+        backup_before_write=settings.backup_before_write,
+    )
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 325, in _apply_rule
+    replaced_segment = _replace_regex(segment, rule)
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 304, in _replace_regex
+    raise ValueError(f"正则未匹配到任何内容: /{rule.pattern}/")
+ValueError: 正则未匹配到任何内容: /True/
+2026-02-28 19:49:17 [INFO] plugin_______ - [批量修改文件] 任务 #2 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:49:17 [INFO] plugin_______ - [批量修改文件] 任务 #3 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:49:17 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 200 -
+2026-02-28 19:49:54 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 200 -
+2026-02-28 19:49:59 [INFO] plugin_______ - [批量修改文件] 开始执行批量修改，任务数: 3，dry_run=False，stop_on_error=False，backup_before_write=False
+2026-02-28 19:49:59 [ERROR] plugin_______ - [批量修改文件] 任务 #1 失败: 正则未匹配到任何内容: /True/
+Traceback (most recent call last):
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 679, in _execute_rules
+    changed = _apply_rule(
+        base_dir,
+    ...<2 lines>...
+        backup_before_write=settings.backup_before_write,
+    )
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 325, in _apply_rule
+    replaced_segment = _replace_regex(segment, rule)
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 304, in _replace_regex
+    raise ValueError(f"正则未匹配到任何内容: /{rule.pattern}/")
+ValueError: 正则未匹配到任何内容: /True/
+2026-02-28 19:49:59 [INFO] plugin_______ - [批量修改文件] 任务 #2 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:49:59 [INFO] plugin_______ - [批量修改文件] 任务 #3 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:49:59 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 200 -
+2026-02-28 19:50:15 [INFO] plugin_______ - [批量修改文件] 开始执行批量修改，任务数: 3，dry_run=False，stop_on_error=False，backup_before_write=False
+2026-02-28 19:50:15 [ERROR] plugin_______ - [批量修改文件] 任务 #1 失败: 正则未匹配到任何内容: /True/
+Traceback (most recent call last):
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 679, in _execute_rules
+    changed = _apply_rule(
+        base_dir,
+    ...<2 lines>...
+        backup_before_write=settings.backup_before_write,
+    )
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 325, in _apply_rule
+    replaced_segment = _replace_regex(segment, rule)
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 304, in _replace_regex
+    raise ValueError(f"正则未匹配到任何内容: /{rule.pattern}/")
+ValueError: 正则未匹配到任何内容: /True/
+2026-02-28 19:50:15 [INFO] plugin_______ - [批量修改文件] 任务 #2 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:50:15 [INFO] plugin_______ - [批量修改文件] 任务 #3 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:50:15 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 200 -
+2026-02-28 19:50:24 [INFO] config_manager - 配置已保存: E:\Project\GameResolutionService\本体\config.ini
+2026-02-28 19:50:24 [INFO] web_config_server - [web] 127.0.0.1 - "POST /save HTTP/1.1" 200 -
+2026-02-28 19:50:27 [INFO] plugin_______ - [批量修改文件] 开始执行批量修改，任务数: 3，dry_run=False，stop_on_error=False，backup_before_write=False
+2026-02-28 19:50:27 [ERROR] plugin_______ - [批量修改文件] 任务 #1 失败: 正则未匹配到任何内容: /True/
+Traceback (most recent call last):
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 679, in _execute_rules
+    changed = _apply_rule(
+        base_dir,
+    ...<2 lines>...
+        backup_before_write=settings.backup_before_write,
+    )
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 325, in _apply_rule
+    replaced_segment = _replace_regex(segment, rule)
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 304, in _replace_regex
+    raise ValueError(f"正则未匹配到任何内容: /{rule.pattern}/")
+ValueError: 正则未匹配到任何内容: /True/
+2026-02-28 19:50:27 [INFO] plugin_______ - [批量修改文件] 任务 #2 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:50:27 [INFO] plugin_______ - [批量修改文件] 任务 #3 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:50:27 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 200 -
+2026-02-28 19:51:15 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 200 -
+2026-02-28 19:51:21 [INFO] plugin_______ - [批量修改文件] 开始执行批量修改，任务数: 4，dry_run=False，stop_on_error=False，backup_before_write=False
+2026-02-28 19:51:21 [ERROR] plugin_______ - [批量修改文件] 任务 #1 失败: 正则未匹配到任何内容: /True/
+Traceback (most recent call last):
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 679, in _execute_rules
+    changed = _apply_rule(
+        base_dir,
+    ...<2 lines>...
+        backup_before_write=settings.backup_before_write,
+    )
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 325, in _apply_rule
+    replaced_segment = _replace_regex(segment, rule)
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 304, in _replace_regex
+    raise ValueError(f"正则未匹配到任何内容: /{rule.pattern}/")
+ValueError: 正则未匹配到任何内容: /True/
+2026-02-28 19:51:21 [INFO] plugin_______ - [批量修改文件] 任务 #2 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:51:21 [INFO] plugin_______ - [批量修改文件] 任务 #3 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:51:21 [INFO] plugin_______ - [批量修改文件] 任务 #4 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:51:21 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 200 -
+2026-02-28 19:52:02 [ERROR] web_config_server - 网页提交处理失败: 任务 1 的修改文本 5 缺少 from 或 to
+Traceback (most recent call last):
+  File "E:\Project\GameResolutionService\本体\web_config_server.py", line 260, in do_POST
+    message = self._dispatch_plugin_action(form)
+  File "E:\Project\GameResolutionService\本体\web_config_server.py", line 241, in _dispatch_plugin_action
+    return plugin_manager.dispatch_web_action(plugin_id, action, form, self.app_state)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Project\GameResolutionService\本体\plugin_manager.py", line 201, in dispatch_web_action
+    result = handle_fn(action, form, context)
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 1109, in handle_web_action
+    task_count, flat_edits = _parse_visual_tasks_payload(raw_text)
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 615, in _parse_visual_tasks_payload
+    raise ValueError(
+        f"任务 {task_index} 的修改文本 {edit_index} 缺少 from 或 to"
+    )
+ValueError: 任务 1 的修改文本 5 缺少 from 或 to
+2026-02-28 19:52:02 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 400 -
+2026-02-28 19:52:21 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 200 -
+2026-02-28 19:52:29 [INFO] plugin_______ - [批量修改文件] 开始执行批量修改，任务数: 5，dry_run=False，stop_on_error=False，backup_before_write=False
+2026-02-28 19:52:29 [ERROR] plugin_______ - [批量修改文件] 任务 #1 失败: 正则未匹配到任何内容: /True/
+Traceback (most recent call last):
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 679, in _execute_rules
+    changed = _apply_rule(
+        base_dir,
+    ...<2 lines>...
+        backup_before_write=settings.backup_before_write,
+    )
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 325, in _apply_rule
+    replaced_segment = _replace_regex(segment, rule)
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 304, in _replace_regex
+    raise ValueError(f"正则未匹配到任何内容: /{rule.pattern}/")
+ValueError: 正则未匹配到任何内容: /True/
+2026-02-28 19:52:29 [INFO] plugin_______ - [批量修改文件] 任务 #2 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:52:29 [INFO] plugin_______ - [批量修改文件] 任务 #3 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:52:29 [INFO] plugin_______ - [批量修改文件] 任务 #4 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:52:29 [ERROR] plugin_______ - [批量修改文件] 任务 #5 失败: 未找到 from 文本:  
+Traceback (most recent call last):
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 679, in _execute_rules
+    changed = _apply_rule(
+        base_dir,
+    ...<2 lines>...
+        backup_before_write=settings.backup_before_write,
+    )
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 327, in _apply_rule
+    replaced_segment = _replace_anchor(segment, rule)
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 272, in _replace_anchor
+    raise ValueError(f"未找到 from 文本: {rule.from_text}")
+ValueError: 未找到 from 文本:  
+2026-02-28 19:52:29 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 200 -
+2026-02-28 19:52:56 [INFO] plugin_______ - [批量修改文件] 开始执行批量修改，任务数: 5，dry_run=False，stop_on_error=False，backup_before_write=False
+2026-02-28 19:52:56 [ERROR] plugin_______ - [批量修改文件] 任务 #1 失败: 正则未匹配到任何内容: /True/
+Traceback (most recent call last):
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 679, in _execute_rules
+    changed = _apply_rule(
+        base_dir,
+    ...<2 lines>...
+        backup_before_write=settings.backup_before_write,
+    )
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 325, in _apply_rule
+    replaced_segment = _replace_regex(segment, rule)
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 304, in _replace_regex
+    raise ValueError(f"正则未匹配到任何内容: /{rule.pattern}/")
+ValueError: 正则未匹配到任何内容: /True/
+2026-02-28 19:52:56 [INFO] plugin_______ - [批量修改文件] 任务 #2 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:52:56 [INFO] plugin_______ - [批量修改文件] 任务 #3 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:52:56 [INFO] plugin_______ - [批量修改文件] 任务 #4 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:52:56 [ERROR] plugin_______ - [批量修改文件] 任务 #5 失败: 未找到 from 文本:  
+Traceback (most recent call last):
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 679, in _execute_rules
+    changed = _apply_rule(
+        base_dir,
+    ...<2 lines>...
+        backup_before_write=settings.backup_before_write,
+    )
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 327, in _apply_rule
+    replaced_segment = _replace_anchor(segment, rule)
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 272, in _replace_anchor
+    raise ValueError(f"未找到 from 文本: {rule.from_text}")
+ValueError: 未找到 from 文本:  
+2026-02-28 19:52:56 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 200 -
+2026-02-28 19:53:22 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 200 -
+2026-02-28 19:53:30 [INFO] plugin_______ - [批量修改文件] 开始执行批量修改，任务数: 5，dry_run=False，stop_on_error=False，backup_before_write=False
+2026-02-28 19:53:30 [ERROR] plugin_______ - [批量修改文件] 任务 #1 失败: 正则未匹配到任何内容: /True/
+Traceback (most recent call last):
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 679, in _execute_rules
+    changed = _apply_rule(
+        base_dir,
+    ...<2 lines>...
+        backup_before_write=settings.backup_before_write,
+    )
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 325, in _apply_rule
+    replaced_segment = _replace_regex(segment, rule)
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 304, in _replace_regex
+    raise ValueError(f"正则未匹配到任何内容: /{rule.pattern}/")
+ValueError: 正则未匹配到任何内容: /True/
+2026-02-28 19:53:30 [INFO] plugin_______ - [批量修改文件] 任务 #2 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:53:30 [INFO] plugin_______ - [批量修改文件] 任务 #3 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:53:30 [INFO] plugin_______ - [批量修改文件] 任务 #4 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:53:30 [ERROR] plugin_______ - [批量修改文件] 任务 #5 失败: 正则未匹配到任何内容: /\n/
+Traceback (most recent call last):
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 679, in _execute_rules
+    changed = _apply_rule(
+        base_dir,
+    ...<2 lines>...
+        backup_before_write=settings.backup_before_write,
+    )
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 325, in _apply_rule
+    replaced_segment = _replace_regex(segment, rule)
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 304, in _replace_regex
+    raise ValueError(f"正则未匹配到任何内容: /{rule.pattern}/")
+ValueError: 正则未匹配到任何内容: /\n/
+2026-02-28 19:53:30 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 200 -
+2026-02-28 19:54:51 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 200 -
+2026-02-28 19:54:54 [INFO] plugin_______ - [批量修改文件] 开始执行批量修改，任务数: 5，dry_run=False，stop_on_error=False，backup_before_write=False
+2026-02-28 19:54:54 [ERROR] plugin_______ - [批量修改文件] 任务 #1 失败: 正则未匹配到任何内容: /True/
+Traceback (most recent call last):
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 679, in _execute_rules
+    changed = _apply_rule(
+        base_dir,
+    ...<2 lines>...
+        backup_before_write=settings.backup_before_write,
+    )
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 325, in _apply_rule
+    replaced_segment = _replace_regex(segment, rule)
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 304, in _replace_regex
+    raise ValueError(f"正则未匹配到任何内容: /{rule.pattern}/")
+ValueError: 正则未匹配到任何内容: /True/
+2026-02-28 19:54:54 [INFO] plugin_______ - [批量修改文件] 任务 #2 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:54:54 [INFO] plugin_______ - [批量修改文件] 任务 #3 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:54:54 [INFO] plugin_______ - [批量修改文件] 任务 #4 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:54:54 [INFO] plugin_______ - [批量修改文件] 任务 #5 成功: D:\WeGameApps\rail_apps\无畏契约(2001715)\live\ShooterGame\Saved\Config\50c532f6-58d2-5142-ab5c-cf95eea76663-alpha1\WindowsClient\GameUserSettings.ini
+2026-02-28 19:54:54 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 200 -
+2026-02-28 19:56:39 [INFO] config_manager - 配置已保存: E:\Project\GameResolutionService\本体\config.ini
+2026-02-28 19:56:39 [INFO] web_config_server - [web] 127.0.0.1 - "POST /save HTTP/1.1" 200 -

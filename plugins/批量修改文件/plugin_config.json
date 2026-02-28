@@ -1,0 +1,6 @@
+{
+  "enabled": true,
+  "dry_run": false,
+  "stop_on_error": false,
+  "backup_before_write": false
+}

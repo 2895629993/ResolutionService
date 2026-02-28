@@ -1,0 +1,28 @@
+2026-02-28 19:22:15 [INFO] config_manager - 配置加载成功: AppConfig(launcher_process='空', game_process='空', default_resolution=Resolution(width=1920, height=1080, refresh_rate=240), enabled_resolution=Resolution(width=1920, height=1080, refresh_rate=240), web_enabled=True, web_host='127.0.0.1', web_port=8765, auto_capture_default_on_start=True, enable_plugins=True)
+2026-02-28 19:22:15 [INFO] main - 配置加载完成:
+2026-02-28 19:22:15 [INFO] main -   启动器进程: 空
+2026-02-28 19:22:15 [INFO] main -   游戏进程:   空
+2026-02-28 19:22:15 [INFO] main -   默认分辨率: 1920x1080 @240Hz
+2026-02-28 19:22:15 [INFO] main -   启用分辨率: 1920x1080 @240Hz
+2026-02-28 19:22:15 [INFO] main - 已导入插件目录: E:\Project\GameResolutionService\plugins\批量修改文件 -> E:\Project\GameResolutionService\本体\plugins\批量修改文件
+2026-02-28 19:22:15 [INFO] plugin_manager - 插件加载成功: 批量修改文件 (E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py)
+2026-02-28 19:22:15 [INFO] web_config_server - 网页配置服务启动: http://127.0.0.1:8765
+2026-02-28 19:22:15 [INFO] main - 已进入配置界面模式，按 Ctrl+C 退出
+2026-02-28 19:22:16 [INFO] main - 已尝试打开浏览器: http://127.0.0.1:8765
+2026-02-28 19:22:16 [INFO] web_config_server - [web] 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-02-28 19:24:08 [ERROR] web_config_server - 网页提交处理失败: 任务 1 的修改文本 1 缺少 pattern
+Traceback (most recent call last):
+  File "E:\Project\GameResolutionService\本体\web_config_server.py", line 260, in do_POST
+    message = self._dispatch_plugin_action(form)
+  File "E:\Project\GameResolutionService\本体\web_config_server.py", line 241, in _dispatch_plugin_action
+    return plugin_manager.dispatch_web_action(plugin_id, action, form, self.app_state)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Project\GameResolutionService\本体\plugin_manager.py", line 201, in dispatch_web_action
+    result = handle_fn(action, form, context)
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 1109, in handle_web_action
+    task_count, flat_edits = _parse_visual_tasks_payload(raw_text)
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "E:\Project\GameResolutionService\本体\plugins\批量修改文件\plugin.py", line 585, in _parse_visual_tasks_payload
+    raise ValueError(f"任务 {task_index} 的修改文本 {edit_index} 缺少 pattern")
+ValueError: 任务 1 的修改文本 1 缺少 pattern
+2026-02-28 19:24:08 [INFO] web_config_server - [web] 127.0.0.1 - "POST /plugin-action HTTP/1.1" 400 -
