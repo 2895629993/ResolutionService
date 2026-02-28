@@ -1,4 +1,4 @@
-# GameResolutionService 本体（服务与配置界面分离）
+# GameResolutionService （服务与配置界面分离）
 
 ##用于修改一些无法修改特殊分辨率的程序，比如瓦罗兰特Valorant和国服无畏契约真实拉伸（本程序开发目的，但实际可以用于其他游戏）
 不同于游戏原版无法设置拉伸，只可使用16:9的画面，本程序可以使用用户电脑上任意已启用的分辨率和拉伸。
@@ -7,7 +7,7 @@
 [批量编辑文件]插件使用方法：文件内置了无畏契约的cfg自动修改，只需要将    “无畏契约根目录\live\ShooterGame\Saved\Config\你的账户\WindowsClient”中的ini文件路径导入即可，随后点击页面底部的保存任务按钮即可
 ##账户编号都是由一串数字组成
 
-本体目录：`GameResolutionService/本体`
+
 
 
 - 通过网页修改运行配置（进程名、分辨率、开关项）。
@@ -89,4 +89,5 @@
 
 ## 日志
 本体日志目录：`GameResolutionService/本体/Logs/YYYY-MM-DD/HH-MM-SS/log.txt`
+
 
